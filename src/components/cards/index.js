@@ -1,3 +1,3 @@
-export { Testimonial } from "./TestimonialCard";
-export { Pricing } from "./PricingCard";
-export { Feature } from "./FeatureCard";
+export { TestimonialCard } from "./TestimonialCard";
+export { PricingCard } from "./PricingCard";
+export { FeatureCard } from "./FeatureCard";

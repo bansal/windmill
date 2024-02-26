@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { SectionHeading } from "#/SectionHeading";
-import { Testimonial } from "#/cards";
-import { Button } from "../base";
-import { Grid } from "../Grid";
+import { TestimonialCard } from "#/cards";
+import { Button } from "#/base";
 
 export function TestimonialSection({
   title,
@@ -23,7 +22,12 @@ export function TestimonialSection({
           description={description}
           badge={badge}
         />
-        <Grid component={Testimonial} items={testimonials} className="my-10" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10">
+          {testimonials &&
+            testimonials.map((item, index) => (
+              <TestimonialCard key={index} {...item} />
+            ))}
+        </div>
         <div className="text-center mt-12">
           <Button
             icon="tabler:brand-x"

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-export function Testimonial(props) {
+export function TestimonialCard(props) {
   return (
     <div className="group bg-white dark:bg-base-950 rounded-xl p-6">
       <div className="flex items-center gap-2">
