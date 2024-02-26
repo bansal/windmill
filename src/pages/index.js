@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { FeatureSection } from "@/components/sections/FeatureSection";
 import {
   Header,
@@ -15,6 +16,9 @@ import { faqs, testimonials, features, site, pricing } from "@/data";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>WindMill</title>
+      </Head>
       <Header {...site.header} />
       <HeroSection id="home" />
       <FeatureSection
