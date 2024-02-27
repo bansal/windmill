@@ -11,7 +11,15 @@ import {
   CtaSection,
 } from "../components/sections";
 
-import { faqs, testimonials, features, site, pricing } from "@/data";
+import {
+  header,
+  faqs,
+  testimonials,
+  features,
+  pricing,
+  clients,
+  footer,
+} from "@/data";
 
 export default function Home() {
   return (
@@ -19,8 +27,44 @@ export default function Home() {
       <Head>
         <title>WindMill</title>
       </Head>
-      <Header {...site.header} />
-      <HeroSection id="home" />
+      <Header
+        logo={header.logo}
+        links={header.links}
+        buttons={header.buttons}
+      />
+      <HeroSection
+        id="home"
+        badge={{
+          href: "#",
+          icon: "tabler:arrow-right",
+          label: "😻 Learn What's New",
+        }}
+        title="Your Mailbox is simplified"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        expedita, ipsam nobis blanditiis provident ducimus aut, velit
+        facere fugit praesentium"
+        buttons={[
+          {
+            href: "#",
+            label: "Start Free Trail",
+            color: "dark",
+          },
+          {
+            href: "#",
+            label: "Learn More",
+            color: "transparent",
+            variant: "link",
+            icon: "tabler:arrow-right",
+          },
+        ]}
+        image={{
+          src: "/tablet-mockup.png",
+          alt: "Product Screenshot on Tablet",
+          className: "w-full h-auto",
+        }}
+        clientsLabel="Trusted by 100+ Brands"
+        clients={clients}
+      />
       <FeatureSection
         id="features"
         title="Discover Our Amazing Features"
@@ -72,11 +116,26 @@ export default function Home() {
           label: "TESTIMONIALS",
         }}
         testimonials={testimonials}
+        button={{
+          icon: "tabler:brand-x",
+          label: "Share Your Feedback on",
+          href: "#",
+          color: "white",
+        }}
       />
       <FaqSection
         id="faqs"
         title="Frequently Asked Questions"
         description="Here are some of our most frequently asked questions. If you have a question that isn't answered here, please feel free to contact us."
+        buttons={[
+          {
+            label: "Contact Support",
+            href: "#",
+            color: "primary",
+            variant: "link",
+            icon: "tabler:arrow-right",
+          },
+        ]}
         faqs={faqs}
       />
       <CtaSection
@@ -84,7 +143,13 @@ export default function Home() {
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique"
         buttons={[{ label: "Start for Free", href: "#", color: "dark" }]}
       />
-      <Footer id="footer" {...site.footer} />
+      <Footer
+        id="footer"
+        copyright={footer.copyright}
+        logo={footer.logo}
+        social={footer.social}
+        links={footer.links}
+      />
     </>
   );
 }

@@ -6,11 +6,11 @@ export function Badge({
   href,
   icon,
   leading = false,
-  as: Tag = "span",
   className,
   children,
   ...rest
 }) {
+  const Tag = href ? "a" : "span";
   return (
     <Tag
       href={href}

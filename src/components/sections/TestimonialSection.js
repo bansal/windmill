@@ -8,6 +8,7 @@ export function TestimonialSection({
   description,
   badge,
   testimonials,
+  button,
   ...rest
 }) {
   return (
@@ -29,12 +30,7 @@ export function TestimonialSection({
             ))}
         </div>
         <div className="text-center mt-12">
-          <Button
-            icon="tabler:brand-x"
-            label="Share Your Feedback on"
-            href="#"
-            color="white"
-          />
+          <Button {...button} />
         </div>
       </div>
     </section>

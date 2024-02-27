@@ -1,15 +1,9 @@
 import React from "react";
 import * as RAccordion from "@radix-ui/react-accordion";
-import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
+import { cn } from "@/lib/utils";
 
 export function Accordion({ items = [] }) {
-  const variants = {
-    open: { rotate: 180 },
-    closed: { rotate: 0 },
-    icon: "tabler:chevron-down",
-    iconSize: 24,
-  };
   return (
     <RAccordion.Root
       className="w-full rounded-md divide-y divide-base-200 dark:divide-base-800"

@@ -23,6 +23,7 @@ export const PricingCard = ({
       <p>{description}</p>
       <div className="w-full border-b border-base my-6"></div>
       <div className="inline-flex gap-1 items-baseline">
+        <span className="text-2xl text-muted">$</span>
         <h2 className="text-5xl font-semibold leading-none text-title">
           {value[tenure]}
         </h2>

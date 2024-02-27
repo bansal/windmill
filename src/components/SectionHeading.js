@@ -27,16 +27,19 @@ export function SectionHeading({
         {title}
       </h2>
       <p>{description}</p>
-      <div
-        className={cn("flex justify-center items-center gap-4 mt-8", {
-          "justify-center": align === "center",
-          "justify-start": align === "left",
-          "justify-end": align === "right",
-        })}
-      >
-        {buttons.length > 0 &&
-          buttons.map((button, index) => <Button key={index} {...button} />)}
-      </div>
+      {buttons.length > 0 && (
+        <div
+          className={cn("flex justify-center items-center gap-4 mt-8", {
+            "justify-center": align === "center",
+            "justify-start": align === "left",
+            "justify-end": align === "right",
+          })}
+        >
+          {buttons.map((button, index) => (
+            <Button key={index} {...button} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

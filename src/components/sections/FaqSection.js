@@ -1,7 +1,8 @@
 import { Accordion } from "#/base";
 import { SectionHeading } from "#/SectionHeading";
 
-export function FaqSection({ title, description, faqs, ...rest }) {
+export function FaqSection({ title, description, buttons, faqs, ...rest }) {
+  console.log("FaqSection -> faqs", buttons);
   return (
     <section className="bg-base-100 dark:bg-base-900" {...rest}>
       <div className="container px-4 mx-auto">
@@ -11,13 +12,8 @@ export function FaqSection({ title, description, faqs, ...rest }) {
               align="left"
               title={title}
               description={description}
+              buttons={buttons}
             />
-            <a
-              href="#"
-              className="inline-block mt-6 text-md font-medium text-primary-500 hover:underline"
-            >
-              Contact us
-            </a>
           </div>
           <div className="col-span-12 lg:col-span-7">
             <Accordion items={faqs} />
