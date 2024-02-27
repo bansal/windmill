@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Inter, Syne } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const display = Syne({
   subsets: ["latin"],
@@ -11,10 +12,17 @@ const body = Inter({
 });
 export default function App({ Component, pageProps }) {
   return (
-    <main
-      className={`${display.variable} ${body.variable} flex min-h-screen flex-col font-body text-base-600 dark:text-base-500 bg-base-50 dark:bg-base-950`}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+      disableTransitionOnChange
     >
-      <Component {...pageProps} />
-    </main>
+      <main
+        className={`${display.variable} ${body.variable} flex min-h-screen flex-col font-body text-base-600 dark:text-base-500 bg-base-50 dark:bg-base-950`}
+      >
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
   );
 }

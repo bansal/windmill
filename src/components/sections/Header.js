@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Button, Link } from "../base";
+import { Button } from "#/base";
+import { ThemeSwitch } from "#/ThemeSwitch";
 
 export function Header({ logo, links, buttons, className, ...rest }) {
   const [open, setOpen] = useState(false);
@@ -46,6 +48,7 @@ export function Header({ logo, links, buttons, className, ...rest }) {
           </ul>
         </div>
         <div className="flex gap-2 ml-auto">
+          <ThemeSwitch />
           {buttons.map((button, index) => (
             <Button key={index} {...button} />
           ))}
