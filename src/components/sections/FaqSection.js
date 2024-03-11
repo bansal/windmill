@@ -2,7 +2,6 @@ import { Accordion } from "#/base";
 import { SectionHeading } from "#/SectionHeading";
 
 export function FaqSection({ title, description, buttons, faqs, ...rest }) {
-  console.log("FaqSection -> faqs", buttons);
   return (
     <section className="bg-base-100 dark:bg-base-900" {...rest}>
       <div className="container px-4 mx-auto">
